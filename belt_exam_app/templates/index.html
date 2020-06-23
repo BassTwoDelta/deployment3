@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/index.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="registration">
+                <h2>Registration</h2>
+                <form method="POST" action="/register_user">
+                    {% csrf_token %}
+                    <label for="email">Email:</label>
+                    <input type="text" name="email"><br><br>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name"><br><br>
+                    <lable for ="password">Password:</lable>
+                    <input type="password" name="password"><br><br>
+                    <label for="confirm_pw">Confirm PW:</label>
+                    <input type="password" name="confirm_pw"><br><br>
+                    <input type="submit" value="Register">
+                    {% if messages %}
+                        <ul class="messages">    
+                        {% for message in messages %}    
+                            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                </form>
+            </div>
+            <div class="login">
+                <h2>Login</h2>
+                <form  method ="POST" action="/login_user">
+                    {% csrf_token %}
+                    <lable for ="username">Email:</lable>
+                    <input type="text" name="email_login"><br><br>
+                    <lable for ="password">Password</lable>
+                    <input type="password" name="password_login"><br><br>
+                    <input type="submit" value="LOG IN">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

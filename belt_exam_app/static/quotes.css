@@ -1,0 +1,60 @@
+.container{
+    width: 1500px;
+    height: 1500px;
+    display: inline-block;
+    background-color: #1e84ad;
+    background-repeat: repeat;
+}
+
+.header{
+    width: 100%;
+    height: 65px;
+    border-bottom: 2px solid black;
+    display: inline-block;
+    background-color:#99c4d5;
+}
+
+.main{
+    display: inline-block;
+    width: 1500px;
+}
+
+.quotes{
+    border: 2px solid black;
+    width: 500px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.favorites{
+    border: 2px solid black;
+    width: 500px;
+    margin-top: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.user_quote{
+    border: 1px solid black;
+    margin: 10px 0px 10px 0px;
+    background-color:#4e879d;
+}
+
+.user_quote form{
+    text-align: right;
+}
+
+.favorite_quotes{
+    border: 1px solid black;
+    margin: 10px 0px 10px 0px;
+    background-color:#4e879d;
+}
+
+.favorite_quotes form{
+    text-align: right;
+}
+
+.contribute_quote{
+    border: 2px solid black;
+    width: 300px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit a Quote</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p><a href="/quotes">Dashboard</a> | <a href="/logout_user">Logout</a>
+        </div>
+        <div class="main">
+            <h3>EDIT QUOTE:</h3>
+            <form method="POST" action="/edit_quote/{{quote.id}}">
+                {% csrf_token %}
+                <label for="quoted_by">Quoted By:</label>
+                <input type="text" name="author" value ="{{quote.author}}"><br><br>
+                <label for="name">Message:</label>
+                <textarea name="message"></textarea><br><br>
+                <input type="submit" value="Sumbit">
+                {% if messages %}
+                    <ul class="messages">    
+                    {% for message in messages %}    
+                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</body>
+</html>
